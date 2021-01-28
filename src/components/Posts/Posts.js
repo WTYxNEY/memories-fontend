@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Grid, CircularProgress } from '@material-ui/core'
-
+import { useLocation } from 'react-router-dom'
 import Post from './Post/Post'
 import useStyle from './styles'
 
@@ -10,6 +10,7 @@ function Posts({ setCurrentId }) {
     const classes = useStyle();
 
     console.log(posts)
+
     return (
         <>
             {posts.length ? (
@@ -20,7 +21,7 @@ function Posts({ setCurrentId }) {
                         </Grid>
                     ))}
                 </Grid>
-            ) : <CircularProgress /> }
+            ) : <CircularProgress />}
         </>
 
     )
